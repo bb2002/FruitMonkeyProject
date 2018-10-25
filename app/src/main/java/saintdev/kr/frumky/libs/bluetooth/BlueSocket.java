@@ -82,7 +82,7 @@ public class BlueSocket extends Thread {
     /**
      * 실제 장치로부터 데이터를 받습니다.
      */
-    private char mCharDelimiter = '\n';
+    private char mCharDelimiter = '#';
     private int readBufferPosition = 0;
     private byte[] readBuffer = new byte[1024];
 
