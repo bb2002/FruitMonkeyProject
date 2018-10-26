@@ -1,83 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="16dp"
-    android:gravity="center">
+    android:layout_margin="16dp">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/control_panel">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Now Playing : "
+                android:layout_marginEnd="32dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/control_now"
+                android:text="None"
+                android:textStyle="bold"/>
+        </TableRow>
+
+        <TableRow>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Control"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/control_stop"
+                android:background="#ca3131"
+                android:textColor="#ffffff"
+                android:text="중지"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/control_clear"
+                android:background="#43b75c"
+                android:textColor="#ffffff"
+                android:text="추가"
+                android:layout_marginStart="8dp"/>
+        </TableRow>
+    </TableLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fruit Monkey Console"
-        android:layout_marginBottom="16dp"/>
-
-    <ScrollView
+        android:id="@+id/empty_queue"
+        android:text="추가 버튼을 눌러 오디오를 추가하세요."
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+    <ListView
+        android:id="@+id/play_quete"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/audio_select_1"
-                android:text="Select 1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/audio_select_2"
-                android:text="Select 2"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/audio_select_3"
-                android:text="Select 3"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/audio_select_4"
-                android:text="Select 4"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/audio_select_5"
-                android:text="Select 5"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="6"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/audio_select_6"
-                android:text="Select 6"/>
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+        android:layout_below="@id/control_panel"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"/>
+</RelativeLayout>
